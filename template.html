@@ -1,11 +1,3 @@
-<!--
-Google IO 2012/2013 HTML5 Slide Template
-
-Authors: Eric Bidelman <ebidel@gmail.com>
-         Luke Mahé <lukem@google.com>
-
-URL: https://code.google.com/p/io-2012-slides
--->
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,19 +36,136 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Slide with Bullets</h2>
+      <h2>O que vamos ver</h2>
     </hgroup>
     <article>
       <ul>
-        <li>Titles are formatted as Open Sans with bold applied and font size is set at 45</li>
-        <li>Title capitalization is title case
+        <li>Yeoman e Generators</li>
+        <li>Bower</li>
+        <li>Grunt</li>
+        <li>AngularJS
           <ul>
-            <li>Subtitle capitalization is title case</li>
+            <li>Gerando o App</li>
+            <li>Instalando uma nova dependencia (bower)</li>
+            <li>Yeoman Generators</li>
+            <li>Tests</li>
           </ul>
         </li>
-        <li>Subtitle capitalization is title case</li>
-        <li>Titles and subtitles should never have a period at the end</li>
       </ul>
+    </article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>Pré-requisitos</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Você precisa ter conhecimentos básicos de linha de comando</li>
+        <li>Ter o <a href="http://nodejs.org/">NodeJS e NPM</a> instalados</li>
+        <li>Bons conhecimentos em Javascript, CSS e HTML</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Yeoman</h2>
+      <h3>O Yeoman vai além de uma ferramenta, é um workflow.</h3>
+    </hgroup>
+    <article>
+      <p>Conjunto de ferramentas e boas praticas fazendo que o desenvolvimento para web melhor e mais ágil.</p>
+      <p>Foco em aumentar a produtividade.</p>
+      <b>Instalação</b>
+      <br><br>
+      <pre class="prettyprint" data-lang="terminal">
+        npm install -g yo
+      </pre>
+      <p>Essa instrução já vai instalar o Yeoman, Grunt e Bower automaticamente.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Yeoman, Ferramentas</h2>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li>yo, scaffolding tool</li>
+        <li>grunt, tasks tool</li>
+        <li>bower, package mandagement</li>
+      </ul>
+
+      <p><b>Yo</b></p>
+      <p>Inicializa o seu projeto, criando o esqueleto da aplicação, criar uma configuração para o <b>bower</b> e para o <b>grunt</b> já implementando algumas tasks essenciais que você provavelmente vai precisar.</p>
+      <p><b>Grunt</b></p>
+      <p>Automatiza tarefas repetitivas, como fazer build, testes e preparar o projeto para ser executado.</p>
+      <p><b>Bower</b></p> 
+      <p>Gerência as dependências do seu projeto, você não precisa mais ficar fazendo download manual e gerenciar versões de bibliotecas de terceiros.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Yeoman, Generators</h2>
+    </hgroup>
+    <article>
+      <p>São como receitas para você inicializar uma aplicação</p>
+      <p>A idéia por trás desse conceito é você criar os esqueletos dos seus projetos com as suas boas práticas e conveções.</p>
+      <p>Já existe uma série de Generators disponíveis. Você pode encontrar executando essa instrução no seu terminal.</p>
+      <pre class="prettyprint" data-lang="terminal">
+        npm search yeoman-generator
+      </pre>
+      <p>Nós vamos usar o generator no AngularJS.</p>
+      <pre class="prettyprint" data-lang="terminal">
+        npm install -g generator-angular
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>AngularJS</h2>
+    </hgroup>
+    <article>
+      <p>É um framework com uma série de peculiaridades e características eficientes e poderosas.</p>
+      <p><b>Gerando um app AngularJS com Yeoman</b></p>
+      <p>Para gerar o App você só precisa disso:</p>
+      <pre class="prettyprint" data-lang="terminal">
+        yo angular
+      </pre>
+      <p>O Generator vai fazer uma série de perguntas do que você pretende instalar. Você pode responder sim para todas, nesse caso.</p>
+      <p>O <b>Yeoman</b> vai criar vários arquivos e pastas, executar o <b>bower install</b> (para instalar as dependências da aplicação) e executar o <b>npm install</b> (para instalar as dependências das tarefas do grunt).</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>AngularJS</h2>
+      <h3>Algumas pastas e arquivos importante</h3>
+    </hgroup>
+    <article class="smaller">
+      <p><b>app/:</b> A pasta contém os seus arquivos estáticos, seu html, css e javascript, onde provavelmente você vai passar a maior parte do seu tempo.</p>
+      <p><b>package.json:</b> Esse arquivo configura o que o npm fará no seu projeto. Ele gerência as depêndencias das tarefas do grunt.</p>
+      <p><b>node_modules/:</b> A pasta onde o npm instala suas dependências.</p>
+      <p><b>Gruntfile.js:</b> É um arquivo javascript responsavel por configurar as tarefas que o grunt vai executar no seu projeto. Ele define variáveis de ambiente, as tarefas e a sequência que as tarefas serão executadas.</p>
+      <p><b>bower.json:</b> Ele funciona como o <b>package.json</b>, mas para o bower. Em algumas versões mais antigas esse arquivo pode ser component.json.</p>
+      <p><b>.bowerrc:</b> Ele configura algumas variáveis gerais do bower.</p>
+      <p><b>arquivos Karma:</b> Karma é um framework de testes. Esses arquivos configuram ou executam alguns testes na sua aplicação.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Executando a Aplicação</h2>
+    </hgroup>
+    <article>
+      <p>Acabamos de criar uma aplicação e entender o que acontece durante o processo.</p>
+      <p>Para executala, basta executar esse comando no seu terminal:</p>
+      <pre class="prettyprint" data-lang="terminal">
+        grunt server
+      </pre>
+      <p>Ele vai executar algumas tarefas, subir um servidor HTTP, iniciar a tarefa <b>watch</b> que fica observando a sua pasta <b>app/</b> e exectua algumas tarefas quando algum arquivo é alterado. </p>
     </article>
   </slide>
 
