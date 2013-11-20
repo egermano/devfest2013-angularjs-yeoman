@@ -1,9 +1,9 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Title Goes Here<br>Up To Two Lines',
-    subtitle: 'Subtitle Goes Here',
-    //eventTitle: 'Google I/O 2013',
+    title: 'AngularJS + Yeoman',
+    subtitle: 'Agilizando a criação e desenvolvimento de aplicações<br/> AngularJS com Yeoman',
+    eventTitle: 'Google DevFest São Paulo 2013',
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
@@ -19,12 +19,12 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [{
-    name: 'Firstname Lastname',
-    company: 'Job Title, Google',
-    gplus: 'http://plus.google.com/1234567890',
-    twitter: '@yourhandle',
-    www: 'http://www.you.com',
-    github: 'http://github.com/you'
+    name: 'Bruno Germano',
+    company: 'Front-End Engineer, On Interactive',
+    gplus: 'http://plus.google.com/+BrunoGermano',
+    twitter: '@egermano',
+    www: 'http://egermano.com',
+    github: 'http://github.com/egermano'
   }/*, {
     name: 'Second Name',
     company: 'Job Title, Google',
