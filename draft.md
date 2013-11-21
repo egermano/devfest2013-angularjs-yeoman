@@ -145,7 +145,7 @@ Agora, no arquivo ```app/scripts/app.js``` vamos adicionar a dependência a noss
 
 Fazendo isso o seu app já vai estar hábil a utilizar a biblioteca. Vamos alterar a view pricipal para utilizar algum recurso da biblioteca.
 
-Alterando o arquivo ```app/views/main.html``, adiconando algumas linhas.
+Alterando o arquivo ```app/views/main.html```, adiconando algumas linhas.
 
 	<ul>
 	  <li class="dropdown">
@@ -257,7 +257,7 @@ Source do app exemplo: [https://github.com/egermano/devfest2013-app-exemple](htt
 
 [http://yeoman.io/](http://yeoman.io/)
 
-[http://gruntjs.com/](http://yeoman.io/)
+[http://gruntjs.com/](http://gruntjs.com/)
 
 [http://bower.io/](http://bower.io/)
 
