@@ -1,11 +1,3 @@
-<!--
-Google IO 2012/2013 HTML5 Slide Template
-
-Authors: Eric Bidelman <ebidel@gmail.com>
-         Luke Mahé <lukem@google.com>
-
-URL: https://code.google.com/p/io-2012-slides
--->
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,319 +36,376 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Slide with Bullets</h2>
+      <h2>O que vamos ver</h2>
     </hgroup>
     <article>
       <ul>
-        <li>Titles are formatted as Open Sans with bold applied and font size is set at 45</li>
-        <li>Title capitalization is title case
+        <li>Yeoman e Generators</li>
+        <li>Bower</li>
+        <li>Grunt</li>
+        <li>AngularJS
           <ul>
-            <li>Subtitle capitalization is title case</li>
+            <li>Gerando o App</li>
+            <li>Instalando uma nova dependencia (bower)</li>
+            <li>Yeoman Generators</li>
+            <li>Tests</li>
           </ul>
         </li>
-        <li>Subtitle capitalization is title case</li>
-        <li>Titles and subtitles should never have a period at the end</li>
       </ul>
     </article>
   </slide>
-
+  
   <slide>
     <hgroup>
-      <h2>Slide with Bullets that Build</h2>
-      <h3>Subtitle Placeholder</h3>
+      <h2>Pré-requisitos</h2>
     </hgroup>
     <article>
-      <p>A list where items build:</p>
-      <ul class="build">
-        <li>Pressing 'h' highlights code snippets</li>
-        <li>Pressing 'p' toggles speaker notes (if they're on the current slide)</li>
-        <li>Pressing 'f' toggles fullscreen viewing</li>
-        <li>Pressing 'w' toggles widescreen</li>
-        <li>Pressing 'o' toggles overview mode</li>
-        <li>Pressing 'ESC' toggles off these goodies</li>
-      </ul>
-      <p>Another list, but items fade as they build:</p>
-      <ul class="build fade">
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
+      <ul>
+        <li>Você precisa ter conhecimentos básicos de linha de comando</li>
+        <li>Ter o <a href="http://nodejs.org/">NodeJS e NPM</a> instalados</li>
+        <li>Bons conhecimentos em Javascript, CSS e HTML</li>
       </ul>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Slide with (Smaller Font)</h2>
+      <h2>Yeoman</h2>
+      <h3>O Yeoman vai além de uma ferramenta, é um workflow.</h3>
+    </hgroup>
+    <article>
+      <p>Conjunto de ferramentas e boas praticas fazendo que o desenvolvimento para web melhor e mais ágil.</p>
+      <p>Foco em aumentar a produtividade.</p>
+      <b>Instalação</b>
+      <br><br>
+      <pre class="prettyprint" data-lang="terminal">
+        npm install -g yo
+      </pre>
+      <p>Essa instrução já vai instalar o Yeoman, Grunt e Bower automaticamente.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Yeoman, Ferramentas</h2>
     </hgroup>
     <article class="smaller">
       <ul>
-        <li>All <a href="http://google.com">links</a> open in new tabs.</li>
-        <li>To change that this, add <code>target="_self"</code> to the link.</li>
+        <li>yo, scaffolding tool</li>
+        <li>grunt, tasks tool</li>
+        <li>bower, package mandagement</li>
+      </ul>
+
+      <p><b>Yo</b></p>
+      <p>Inicializa o seu projeto, criando o esqueleto da aplicação, criar uma configuração para o <b>bower</b> e para o <b>grunt</b> já implementando algumas tasks essenciais que você provavelmente vai precisar.</p>
+      <p><b>Grunt</b></p>
+      <p>Automatiza tarefas repetitivas, como fazer build, testes e preparar o projeto para ser executado.</p>
+      <p><b>Bower</b></p> 
+      <p>Gerência as dependências do seu projeto, você não precisa mais ficar fazendo download manual e gerenciar versões de bibliotecas de terceiros.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Yeoman, Generators</h2>
+    </hgroup>
+    <article>
+      <p>São como receitas para você inicializar uma aplicação</p>
+      <p>A idéia por trás desse conceito é você criar os esqueletos dos seus projetos com as suas boas práticas e conveções.</p>
+      <p>Já existe uma série de Generators disponíveis. Você pode encontrar executando essa instrução no seu terminal.</p>
+      <pre class="prettyprint" data-lang="terminal">
+        npm search yeoman-generator
+      </pre>
+      <p>Nós vamos usar o generator no AngularJS.</p>
+      <pre class="prettyprint" data-lang="terminal">
+        npm install -g generator-angular
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>AngularJS</h2>
+    </hgroup>
+    <article>
+      <p>É um framework com uma série de peculiaridades e características eficientes e poderosas.</p>
+      <p><b>Gerando um app AngularJS com Yeoman</b></p>
+      <p>Para gerar o App você só precisa disso:</p>
+      <pre class="prettyprint" data-lang="terminal">
+        yo angular
+      </pre>
+      <p>O Generator vai fazer uma série de perguntas do que você pretende instalar. Você pode responder sim para todas, nesse caso.</p>
+      <p>O <b>Yeoman</b> vai criar vários arquivos e pastas, executar o <b>bower install</b> (para instalar as dependências da aplicação) e executar o <b>npm install</b> (para instalar as dependências das tarefas do grunt).</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>AngularJS</h2>
+      <h3>Algumas pastas e arquivos importante</h3>
+    </hgroup>
+    <article class="smaller">
+      <p><b>app/:</b> A pasta contém os seus arquivos estáticos, seu html, css e javascript, onde provavelmente você vai passar a maior parte do seu tempo.</p>
+      <p><b>package.json:</b> Esse arquivo configura o que o npm fará no seu projeto. Ele gerência as depêndencias das tarefas do grunt.</p>
+      <p><b>node_modules/:</b> A pasta onde o npm instala suas dependências.</p>
+      <p><b>Gruntfile.js:</b> É um arquivo javascript responsavel por configurar as tarefas que o grunt vai executar no seu projeto. Ele define variáveis de ambiente, as tarefas e a sequência que as tarefas serão executadas.</p>
+      <p><b>bower.json:</b> Ele funciona como o <b>package.json</b>, mas para o bower. Em algumas versões mais antigas esse arquivo pode ser component.json.</p>
+      <p><b>.bowerrc:</b> Ele configura algumas variáveis gerais do bower.</p>
+      <p><b>arquivos Karma:</b> Karma é um framework de testes. Esses arquivos configuram ou executam alguns testes na sua aplicação.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Executando a Aplicação</h2>
+    </hgroup>
+    <article>
+      <p>Acabamos de criar uma aplicação e entender o que acontece durante o processo.</p>
+      <p>Para executala, basta executar esse comando no seu terminal:</p>
+      <pre class="prettyprint" data-lang="terminal">
+        grunt server
+      </pre>
+      <p>Ele vai executar algumas tarefas, subir um servidor HTTP e iniciar a tarefa <b>watch</b>, que fica observando a sua pasta <b>app/</b> e exectua algumas tarefas quando algum arquivo é alterado. </p>
+      <p>Por fim ele vai abrir seu navegador já com a aplicação executando.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Executando a Aplicação</h2>
+      <h3>Você vai ver algo assim</h3>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/app-001.png" class="reflect" alt="App Index" title="App Index" height="100%">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Instalando uma nova dependencia</h2>
+    </hgroup>
+    <article>
+      <p>Como já vimos antes o bower é um gerenciador de dependências. Nele você vai encontrar desde frameworks, como o Twitter Bootstrap, bibliotecas Javascript, plugins de jQuery e outras coisas.</p>
+      <p>Nesse exemplo vamos usar uma biblioteca chamada Angular Bootstrap, do <a href="http://angular-ui.github.io/bootstrap/">Angular-UI</a>, são os plugins do Twitter Bootstrap exportados para o AngularJS.</p>
+      <p><b>Para installar</b></p>
+      <pre class="prettyprint" data-lang="terminal">
+        bower install angular-bootstrap --save
+      </pre>
+      <p>A flag --save diz ao bower que essa dependência tem que ser salva no seu arquivo bower.json.</p>
+      <p>Em alguns segundo você já está com a biblioteca instalada no seu projeto, na pasta <b>app/bower_components/</b>.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Usando a dependência</h2>
+      <h3>Vamos usar o que acabamos de instalar</h3>
+    </hgroup>
+    <article>
+      <p>Para isso vamos precisar adicionar o script na nossa aplicação, adiconando essa linha junto com os outros scripts no <b>app/index.html</b>.</p>
+      <br><br>
+      <pre class="prettyprint" data-lang="html">
+        <br>
+        &lt;script src="bower_components/angular-bootstrap/ui-bootstrap.js"&gt;&lt;/script&gt;
+      </pre>
+    </article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>Usando a dependência</h2>
+    </hgroup>
+    <article>
+      <p>Agora, no arquivo <b>app/scripts/app.js</b> vamos adicionar a dependência a nossa aplicação, o início do seu arquivo vai ficar mais ou menos assim:</p>
+      <pre class="prettyprint" data-lang="javascript">
+        'use strict';
+
+        angular.module('appExempleApp', [
+          'ngCookies',
+          'ngResource',
+          'ngSanitize',
+          'ui.bootstrap' // adicione a dependência
+        ])
+        ...
+      </pre>
+      <p>Fazendo isso o seu app já vai estar hábil a utilizar a biblioteca. </p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Usando a dependência</h2>
+    </hgroup>
+    <article>
+      <p>Vamos alterar a view pricipal para utilizar algum recurso da biblioteca. Alterando o arquivo <b>app/views/main.html</b>, adiconando algumas linhas.</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;ul&gt;
+          &lt;li class="dropdown"&gt;
+            &lt;a class="dropdown-toggle"&gt;
+              Click me to see some awesome things!
+            &lt;/a&gt;
+            &lt;ul class="dropdown-menu"&gt;
+              &lt;li ng-repeat="thing in awesomeThings"&gt;
+                &lt;a&gt;{{thing}}&lt;/a&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Usando a dependência</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/app-002.png" class="reflect" alt="App with Angular-UI Bootstrap" title="App with Angular-UI Bootstrap" height="100%">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Yeoman Generators</h2>
+    </hgroup>
+    <article class="smaller">
+      <p>O generator do Angular, além de gerar a aplicação ele também tem um série de generators para você usar durante o desenvolvimento.</p>
+      <p>Vamos criar uma nova rota para a nossa aplicação, a rota <b>devfest</b>.</p>
+      <p>Para criar é só executar essa instrução no seu terminal:</p>
+      <pre class="prettyprint" data-lang="terminal">
+        yo angular:route devfest
+      </pre>
+      <p>O generator irá gerar um controller, uma view e vai atualizar o arquivo <b>app/scripts/app.js</b> com a nova rota.</p>
+      <p>Acessando a sua rota (/devfest) você vai visualizar o que o Yeoman criou.</p>
+      <pre>
+        This is the devfest view.
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Testes</h2>
+    </hgroup>
+    <article class="smaller">
+      <p>Antes de executar os testes, precisamos atualizar as depêndiencias da nossa aplicação.</p>
+      <p>No arquivo <b>karma-config.js</b> adicionamos na propriedade files as depêndencias que instalamos pelo bower, seu arquivo vai ficar parecido com isso:</p>
+      <pre class="prettyprint" data-lang="javascript">
+        files: [
+          'app/bower_components/angular/angular.js',
+          'app/bower_components/angular-mocks/angular-mocks.js',
+          'app/bower_components/angular-resource/angular-resource.js', // nova dependência
+          'app/bower_components/angular-cookies/angular-cookies.js', // nova dependência
+          'app/bower_components/angular-sanitize/angular-sanitize.js', // nova dependência
+          'app/bower_components/angular-bootstrap/ui-bootstrap.js', // nova dependência
+          'app/scripts/*.js',
+          'app/scripts/**/*.js',
+          'test/mock/**/*.js',
+          'test/spec/**/*.js'
+        ],
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Testes</h2>
+    </hgroup>
+    <article>
+      <p>O generator já cria na sua aplicação alguns teste, para executar, basta você executar:</p>
+      <br>
+      <pre class="prettyprint" data-lang="terminal">
+        grunt test
+      </pre>
+      <br>
+      <p>Ele vai executar algumas tarefas para preparar os testes, vai executar os testes e exibir o relatório de todos os testes no final.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Testes</h2>
+    </hgroup>
+    <article>
+      <p>Vamos forçar um erro. No arquivo <b>/app/scripts/controllers/main.js</b>, adicione um item em <b>awesomeThings</b>. Ele vai ficar parecido com isso:</p>
+      <pre class="prettyprint" data-lang="javascript">
+        'use strict';
+
+        angular.module('appExempleApp')
+          .controller('MainCtrl', function ($scope) {
+            $scope.awesomeThings = [
+              'HTML5 Boilerplate',
+              'AngularJS',
+              'Karma',
+              'DevFest 2013' // novo item
+            ];
+          });
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Testes</h2>
+    </hgroup>
+    <article>
+      <p>Ao executar o <b>grunt test</b> novamente ele vai indicar que um dos tests deu erro.</p>
+      <p>Para corrigir é só alterar o arquivo <b>tests/spec/controllers/main.js</b>, indicando que o <b>awesomeThings</b> deve ter 4 itens.</p>
+      <br>
+      <pre class="prettyprint" data-lang="javascript">
+        expect(scope.awesomeThings.length).toBe(4);
+      </pre>
+      <br>
+      <p>Executando o <b>grunt test</b> mais uma vez todos os testes vão ser executados com sucesso.</p>
+    </article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>Build</h2>
+    </hgroup>
+    <article>
+      <p>Por fim vamos preparar a nossa aplicação para o ambiente final.</p>
+      <p>Executando no terminal:</p>
+      <pre class="prettyprint" data-lang="terminal">
+        grunt build
+      </pre>
+      <br>
+      <p>O Grunt vai executar uma série de tarefas incluindo cssmin, htmlmin, imagesmin, uglify dos js e por fim ele criar um pasta <b>dist/</b> com a sua aplicação pronta para o ambiente final.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Conclusão</h2>
+    </hgroup>
+    <article>
+      <p>O AngularJS por si só já é um framework poderoso. </p>
+      <p>Com o apoio do Yeoman vimos como fica mais ágil e produtivo:</p>
+      <ul>
+        <li>Iniciar o projeto</li>
+        <li>Gerênciar dependências</li>
+        <li>Gerar partes da aplicação (controllers, routes, etc)</li>
+        <li>Executar tests</li>
+        <li>Finalizar a aplicação para deploy</li>
       </ul>
     </article>
   </slide>
 
-  <slide hidden>
-    Hidden slides are left out of the presentation.
-  </slide>
-
   <slide>
     <hgroup>
-      <h2>Code Slide (with Subtitle Placeholder)</h2>
-      <h3>Subtitle Placeholder</h3>
+      <h2>Recursos</h2>
     </hgroup>
     <article>
-      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
-      <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    <b>for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }</b>
-  }
-&lt;/script&gt;
-</pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Code Slide (Smaller Font)</h2>
-    </hgroup>
-    <article class="smaller">
-      <pre class="prettyprint" data-lang="javascript">
-// Say hello world until the user starts questioning
-// the meaningfulness of their existence.
-function helloWorld(world) {
-  for (var i = 42; --i &gt;= 0;) {
-    alert('Hello ' + String(world));
-  }
-}
-</pre>
-<pre class="prettyprint" data-lang="css">
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-&lt;/style&gt;
-</pre>
-<pre class="prettyprint" data-lang="html">
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-  &lt;title>My Awesome Page&lt;/title>
-&lt;/head>
-&lt;body>
-  &lt;p&gt;Hello world&lt;/p&gt;
-&lt;body>
-&lt;/html>
-</pre>
-    </article>
-  </slide>
-
-  <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>Point I wanted to make #1</li>
-          <li>Point I wanted to make #2</li>
-          <li>Point I wanted to make #3</li>
-          <li>Example <a href="#">link</a> in notes.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Slide with Speaker Notes</h2>
-    </hgroup>
-    <article>
-      <p>Press 'p' to toggle speaker notes.</p>
-    </article>
-  </slide>
-
-  <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>See this amazing link: <a href="http://www.google.com">link</a>.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Presenter Mode</h2>
-    </hgroup>
-    <article>
-      <p>Add <code><a href="?presentme=true" target="_self">?presentme=true</a></code> to the URL to enabled presenter mode.
-      This setting is sticky, meaning refreshing the page will persist presenter
-      mode.</p>
-      <p>Hit <code><a href="?presentme=false" target="_self">?presentme=false</a></code> to disable presenter mode.</p>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide with Image</h2>
-    </hgroup>
-    <article>
-      <img src="images/chart.png" class="reflect" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide with Image (Centered horz/vert)</h2>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <img src="images/barchart.png" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Table Option A</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Table Option A (Smaller Text)</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article class="smaller">
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Table Option B</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table class="rows">
-        <tr>
-          <th>Header 1</th><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 2</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 3</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 4</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 5</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide Styles</h2>
-    </hgroup>
-    <article class="smaller">
-      <div class="columns-2">
-        <ul>
-          <li class="red">class="red"</li>
-          <li class="red2">class="red2"</li>
-          <li class="red3">class="red3"</li>
-          <li class="blue">class="blue"</li>
-          <li class="blue2">class="blue2"</li>
-          <li class="blue3">class="blue3"</li>
-          <li class="green">class="green"</li>
-          <li class="green2">class="green2"</li>
-        </ul>
-        <ul>
-          <li class="green3">class="green3"</li>
-          <li class="yellow">class="yellow"</li>
-          <li class="yellow2">class="yellow2"</li>
-          <li class="yellow3">class="yellow3"</li>
-          <li class="gray">class="gray"</li>
-          <li class="gray2">class="gray2"</li>
-          <li class="gray3">class="gray3"</li>
-          <li class="gray4">class="gray4"</li>
-        </ul>
-      </div>
-      <div class="centered" style="margin-top:2em">
-        I am centered text with a <button>Button</button> and <button disabled>Disabled</button> button.
-      </div>
-    </article>
-  </slide>
-
-  <slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
-    <hgroup class="auto-fadein">
-      <h2>Segue Slide</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-  </slide>
-
-  <slide class="fill nobackground" style="background-image: url(images/sky.jpg)">
-    <hgroup>
-      <h2 class="white">Full Image (with Optional Header)</h2>
-    </hgroup>
-    <footer class="source white">www.flickr.com/photos/25797459@N06/5438799763/</footer>
-  </slide>
-
-  <slide class="segue dark quote nobackground">
-    <aside class="gdbar right bottom"><img src="images/google_developers_icon_128.png"></aside>
-    <article class="flexbox vleft auto-fadein">
-      <q>
-        This is an example of quote text.
-      </q>
-      <div class="author">
-        Name<br>
-        Company
-      </div>
+      <ul>
+        <li>Source do app exemplo: <a href="https://github.com/egermano/devfest2013-app-exemple">https://github.com/egermano/devfest2013-app-exemple</a></li>
+        <li><a href="http://angularjs.org/">http://angularjs.org/</a></li>
+        <li><a href="http://yeoman.io/">http://yeoman.io/</a></li>
+        <li><a href="http://gruntjs.com/">http://gruntjs.com/</a></li>
+        <li><a href="http://bower.io/">http://bower.io/</a></li>
+        <li><a href="http://github.com/yeoman/generator-angular">http://github.com/yeoman/generator-angular</a></li>
+        <li><a href="http://www.sitepoint.com/kickstart-your-angularjs-development-with-yeoman-grunt-and-bower/">http://www.sitepoint.com/kickstart-your-angularjs-development-with-yeoman-grunt-and-bower/</a></li>
+      </ul>
     </article>
   </slide>
 
@@ -364,6 +413,7 @@ function helloWorld(world) {
     <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <h2>Obrigado!</h2>
+      <p><a style="color: white; text-decoration: none; border: 0;" href="http://egermano.github.io/devfest2013-angularjs-yeoman">http://egermano.github.io/devfest2013-angularjs-yeoman</a></p>
     </article>
     <p class="auto-fadein" data-config-contact>
       <!-- populated from slide_config.json -->
