@@ -170,14 +170,16 @@ slides > slide {
 
     &:before {
       font-size: 12pt;
-      content: $social-tags;
+      content: ''; //$social-tags;
       position: absolute;
       bottom: $slide-top-bottom-padding / 2;
       left: $slide-left-right-padding;
-      background: url(../../images/google_developers_icon_128.png) no-repeat 0 50%;
-      @include background-size($brand-small-icon-size $brand-small-icon-size);
-      padding-left: $brand-small-icon-size + 10;
-      height: $brand-small-icon-size;
+      background: url(../../images/logo_on_footer.png) no-repeat 0 50%;
+      height: 30px;
+      width: 160px;
+      // @include background-size($brand-small-icon-size $brand-small-icon-size);
+      // padding-left: $brand-small-icon-size + 10;
+      // height: $brand-small-icon-size;
       line-height: 1.9;
     }
     &:after {
@@ -191,16 +193,16 @@ slides > slide {
   }
 
   &.title-slide {
-    &:after {
-      content: '';
-      background: url(../../images/io2012_logo.png) no-repeat 100% 50%;
-      @include background-size(contain);
-      position: absolute;
-      bottom: $slide-top-bottom-padding;
-      right: $slide-top-bottom-padding;
-      width: 100%;
-      height: 60px;
-    }
+    // &:after {
+    //   content: '';
+    //   background: url(../../images/io2012_logo.png) no-repeat 100% 50%;
+    //   @include background-size(contain);
+    //   position: absolute;
+    //   bottom: $slide-top-bottom-padding;
+    //   right: $slide-top-bottom-padding;
+    //   width: 100%;
+    //   height: 60px;
+    // }
   }
 
   &.backdrop {
@@ -942,6 +944,9 @@ aside.gdbar {
       color: $gray-3;
       line-height: 1.3;
       margin-top: 2em;
+      &.presenter {
+        font-size: 34px;
+      }
     }
   }
 }
