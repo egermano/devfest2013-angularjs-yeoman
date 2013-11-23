@@ -18,19 +18,13 @@
 
 <slides class="layout-widescreen">
 
-  <slide class="logoslide nobackground">
-    <article class="flexbox vcenter">
-      <span><img src="images/google_developers_logo.png"></span>
-    </article>
-  </slide>
-
   <slide class="title-slide segue nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <aside class="gdbar"><img src="images/logo_on.png"></aside>
     <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
-      <p data-config-presenter><!-- populated from slide_config.json --></p>
+      <p data-config-presenter class="presenter"><!-- populated from slide_config.json --></p>
     </hgroup>
   </slide>
 
@@ -40,13 +34,16 @@
     </hgroup>
     <article>
       <ul>
-        <li>Yeoman e Generators</li>
-        <li>Bower</li>
-        <li>Grunt</li>
+        <li>Yeoman
+          <ul>
+            <li>Ferramentas</li>
+            <li>Generators</li>
+          </ul>
+        </li>
         <li>AngularJS
           <ul>
             <li>Gerando o App</li>
-            <li>Instalando uma nova dependencia (bower)</li>
+            <li>Instalando uma nova dependência (bower)</li>
             <li>Yeoman Generators</li>
             <li>Tests</li>
           </ul>
@@ -74,7 +71,7 @@
       <h3>O Yeoman vai além de uma ferramenta, é um workflow.</h3>
     </hgroup>
     <article>
-      <p>Conjunto de ferramentas e boas praticas fazendo que o desenvolvimento para web melhor e mais ágil.</p>
+      <p>Conjunto de ferramentas e boas práticas, fazendo com que o desenvolvimento para a web seja melhor e mais ágil.</p>
       <p>Foco em aumentar a produtividade.</p>
       <b>Instalação</b>
       <br><br>
@@ -101,7 +98,7 @@
       <p><b>Grunt</b></p>
       <p>Automatiza tarefas repetitivas, como fazer build, testes e preparar o projeto para ser executado.</p>
       <p><b>Bower</b></p> 
-      <p>Gerência as dependências do seu projeto, você não precisa mais ficar fazendo download manual e gerenciar versões de bibliotecas de terceiros.</p>
+      <p>Gerencia as dependências do seu projeto, você não precisa mais ficar fazendo download manual e gerenciar versões de bibliotecas de terceiros.</p>
     </article>
   </slide>
 
@@ -111,7 +108,7 @@
     </hgroup>
     <article>
       <p>São como receitas para você inicializar uma aplicação</p>
-      <p>A idéia por trás desse conceito é você criar os esqueletos dos seus projetos com as suas boas práticas e conveções.</p>
+      <p>A idéia por trás desse conceito é você criar os esqueletos dos seus projetos com as suas boas práticas e convenções.</p>
       <p>Já existe uma série de Generators disponíveis. Você pode encontrar executando essa instrução no seu terminal.</p>
       <pre class="prettyprint" data-lang="terminal">
         npm search yeoman-generator
@@ -142,13 +139,13 @@
   <slide>
     <hgroup>
       <h2>AngularJS</h2>
-      <h3>Algumas pastas e arquivos importante</h3>
+      <h3>Algumas pastas e arquivos importantes</h3>
     </hgroup>
     <article class="smaller">
       <p><b>app/:</b> A pasta contém os seus arquivos estáticos, seu html, css e javascript, onde provavelmente você vai passar a maior parte do seu tempo.</p>
-      <p><b>package.json:</b> Esse arquivo configura o que o npm fará no seu projeto. Ele gerência as depêndencias das tarefas do grunt.</p>
+      <p><b>package.json:</b> Esse arquivo configura o que o npm fará no seu projeto. Ele gerencia as depêndencias das tarefas do grunt.</p>
       <p><b>node_modules/:</b> A pasta onde o npm instala suas dependências.</p>
-      <p><b>Gruntfile.js:</b> É um arquivo javascript responsavel por configurar as tarefas que o grunt vai executar no seu projeto. Ele define variáveis de ambiente, as tarefas e a sequência que as tarefas serão executadas.</p>
+      <p><b>Gruntfile.js:</b> É um arquivo javascript responsável por configurar as tarefas que o grunt vai executar no seu projeto. Ele define variáveis de ambiente, as tarefas e a sequência em que as tarefas serão executadas.</p>
       <p><b>bower.json:</b> Ele funciona como o <b>package.json</b>, mas para o bower. Em algumas versões mais antigas esse arquivo pode ser component.json.</p>
       <p><b>.bowerrc:</b> Ele configura algumas variáveis gerais do bower.</p>
       <p><b>arquivos Karma:</b> Karma é um framework de testes. Esses arquivos configuram ou executam alguns testes na sua aplicação.</p>
@@ -161,12 +158,11 @@
     </hgroup>
     <article>
       <p>Acabamos de criar uma aplicação e entender o que acontece durante o processo.</p>
-      <p>Para executala, basta executar esse comando no seu terminal:</p>
+      <p>Para executá-la, basta executar esse comando no seu terminal:</p>
       <pre class="prettyprint" data-lang="terminal">
         grunt server
       </pre>
-      <p>Ele vai executar algumas tarefas, subir um servidor HTTP e iniciar a tarefa <b>watch</b>, que fica observando a sua pasta <b>app/</b> e exectua algumas tarefas quando algum arquivo é alterado. </p>
-      <p>Por fim ele vai abrir seu navegador já com a aplicação executando.</p>
+      <p>Ele executa algumas tarefas, subir um servidor HTTP e iniciar a tarefa <b>watch</b>, que fica observando a sua pasta <b>app/</b> e exectua algumas tarefas quando algum arquivo é alterado, por fim, ele vai abrir seu navegador já com a aplicação executando.</p>
     </article>
   </slide>
 
@@ -184,14 +180,14 @@
       <h2>Instalando uma nova dependencia</h2>
     </hgroup>
     <article>
-      <p>Como já vimos antes o bower é um gerenciador de dependências. Nele você vai encontrar desde frameworks, como o Twitter Bootstrap, bibliotecas Javascript, plugins de jQuery e outras coisas.</p>
+      <p>Como já vimos antes, o bower é um gerenciador de dependências. Nele você vai encontrar frameworks, como o Twitter Bootstrap, bibliotecas Javascript, plugins de jQuery e outras coisas.</p>
       <p>Nesse exemplo vamos usar uma biblioteca chamada Angular Bootstrap, do <a href="http://angular-ui.github.io/bootstrap/">Angular-UI</a>, são os plugins do Twitter Bootstrap exportados para o AngularJS.</p>
-      <p><b>Para installar</b></p>
+      <p><b>Para instalar</b></p>
       <pre class="prettyprint" data-lang="terminal">
         bower install angular-bootstrap --save
       </pre>
       <p>A flag --save diz ao bower que essa dependência tem que ser salva no seu arquivo bower.json.</p>
-      <p>Em alguns segundo você já está com a biblioteca instalada no seu projeto, na pasta <b>app/bower_components/</b>.</p>
+      <p>Em alguns segundos você já está com a biblioteca instalada no seu projeto, na pasta <b>app/bower_components/</b>.</p>
     </article>
   </slide>
 
@@ -201,7 +197,7 @@
       <h3>Vamos usar o que acabamos de instalar</h3>
     </hgroup>
     <article>
-      <p>Para isso vamos precisar adicionar o script na nossa aplicação, adiconando essa linha junto com os outros scripts no <b>app/index.html</b>.</p>
+      <p>Para isso vamos precisar adicionar o script à aplicação, adiconando essa linha junto com os outros scripts no <b>app/index.html</b>.</p>
       <br><br>
       <pre class="prettyprint" data-lang="html">
         <br>
@@ -215,7 +211,7 @@
       <h2>Usando a dependência</h2>
     </hgroup>
     <article>
-      <p>Agora, no arquivo <b>app/scripts/app.js</b> vamos adicionar a dependência a nossa aplicação, o início do seu arquivo vai ficar mais ou menos assim:</p>
+      <p>Agora, no arquivo <b>app/scripts/app.js</b> vamos adicionar a dependência à aplicação, o início do seu arquivo vai ficar mais ou menos assim:</p>
       <pre class="prettyprint" data-lang="javascript">
         'use strict';
 
@@ -236,7 +232,7 @@
       <h2>Usando a dependência</h2>
     </hgroup>
     <article>
-      <p>Vamos alterar a view pricipal para utilizar algum recurso da biblioteca. Alterando o arquivo <b>app/views/main.html</b>, adiconando algumas linhas.</p>
+      <p>Vamos alterar a view pricipal para utilizar algum recurso da biblioteca. Alterando o arquivo <b>app/views/main.html</b>, adicionando algumas linhas.</p>
       <pre class="prettyprint" data-lang="html">
         &lt;ul&gt;
           &lt;li class="dropdown"&gt;
@@ -268,7 +264,7 @@
       <h2>Yeoman Generators</h2>
     </hgroup>
     <article class="smaller">
-      <p>O generator do Angular, além de gerar a aplicação ele também tem um série de generators para você usar durante o desenvolvimento.</p>
+      <p>O generator do Angular, além de gerar a aplicação, também tem um série de generators para você usar durante o desenvolvimento.</p>
       <p>Vamos criar uma nova rota para a nossa aplicação, a rota <b>devfest</b>.</p>
       <p>Para criar é só executar essa instrução no seu terminal:</p>
       <pre class="prettyprint" data-lang="terminal">
@@ -311,7 +307,7 @@
       <h2>Testes</h2>
     </hgroup>
     <article>
-      <p>O generator já cria na sua aplicação alguns teste, para executar, basta você executar:</p>
+      <p>O generator já cria na sua aplicação alguns testes para executar, basta você executar:</p>
       <br>
       <pre class="prettyprint" data-lang="terminal">
         grunt test
@@ -370,7 +366,7 @@
         grunt build
       </pre>
       <br>
-      <p>O Grunt vai executar uma série de tarefas incluindo cssmin, htmlmin, imagesmin, uglify dos js e por fim ele criar um pasta <b>dist/</b> com a sua aplicação pronta para o ambiente final.</p>
+      <p>O Grunt vai executar uma série de tarefas incluindo cssmin, htmlmin, imagesmin, uglify dos js e por fim ele vai criar um pasta <b>dist/</b> com a sua aplicação pronta para o ambiente final.</p>
     </article>
   </slide>
 
@@ -409,29 +405,22 @@
   </slide>
 
   <slide class="thank-you-slide segue nobackground">
-    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+    <aside class="gdbar right"><img src="images/logo_on.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <h2>Obrigado!</h2>
-      <p><a style="color: white; text-decoration: none; border: 0;" href="http://egermano.github.io/devfest2013-angularjs-yeoman">http://egermano.github.io/devfest2013-angularjs-yeoman</a></p>
+      <p>AngularJS + Yeoman: <a style="color: white; text-decoration: none; border: 0;" href="http://goo.gl/ZYoOlz">http://goo.gl/ZYoOlz</a></p>
     </article>
     <p class="auto-fadein" data-config-contact>
       <!-- populated from slide_config.json -->
     </p>
   </slide>
-
-  <slide class="logoslide dark nobackground">
-    <article class="flexbox vcenter">
-      <span><img src="images/google_developers_logo_white.png"></span>
-    </article>
-  </slide>
-
   <slide class="backdrop"></slide>
 
 </slides>
 
 <script>
 var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_setAccount', 'UA-2122503-18']);
 _gaq.push(['_trackPageview']);
 
 (function() {
